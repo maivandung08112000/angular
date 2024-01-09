@@ -5,10 +5,11 @@ import { ProductComponent } from '../../components/product/product.component';
 import { NgFor } from '@angular/common';
 import { ProductService } from '../../services/product.service'; // import services
 import { Product } from '../../types/Product';
+import { AlbumComponent } from '../../components/album/album.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent, FooterComponent, ProductComponent, NgFor],
+  imports: [HeaderComponent, FooterComponent, ProductComponent, NgFor, AlbumComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

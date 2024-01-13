@@ -1,16 +1,12 @@
-<app-header />
+
 <app-album />
 <main class="container mx-auto mt-[20px]">
   <h1 class="pb-4 text-center text-4xl font-extrabold dark:text-white">
     Product List
   </h1>
   <div class="grid grid-cols-4 justify-center gap-6">
-    <app-product
-      *ngFor="let productParent of productList"
-      [productChild]="productParent"
-    />
-  </div>
+      <app-product *ngFor="let product of products" [product]="product" />
+    </div>
 </main>
-<app-footer />
 
 

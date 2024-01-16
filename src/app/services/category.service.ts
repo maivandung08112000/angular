@@ -10,7 +10,7 @@ export class CategoryService {
 
   getCategoryList() {
     return this.http.get<Category[]>(
-      ' http://localhost:3000/products'
+      'http://localhost:3000/Category'
     );
   }
 }

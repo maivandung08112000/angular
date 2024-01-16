@@ -12,13 +12,4 @@ export type Product = {
     count: number;
   };
 };
-
-export type ProductAdmin = Omit<Product, 'id' | 'category'> & {
-  rate: number;
-};
-
-export type ApiProduct = Omit<Product, 'id' | 'rating'> & {
-  _id: string;
-  category: Category;
-  rate: number;
-};
+export type CreateProductForm = Omit<Product, 'id' | 'rating'>;

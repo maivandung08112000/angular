@@ -239,6 +239,32 @@
         "rate": 3.6,
         "count": 145
       }
+    },
+    {
+      "title": "w",
+      "description": "s",
+      "image": "C:\\fakepath\\ckeditor_2074276.jpg",
+      "category": "women's clothing",
+      "price": 1,
+      "id": 21
+    }
+  ],
+  "Category": [
+    {
+      "_id": "women's clothing",
+      "title": "women's clothing"
+    },
+    {
+      "_id": "electronics",
+      "title": "electronics"
+    },
+    {
+      "_id": "jewelery",
+      "title": "jewelery"
+    },
+    {
+      "_id": "men's clothing",
+      "title": "men's clothing"
     }
   ]
 }

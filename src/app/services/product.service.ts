@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core'; // inject
 import { HttpClient } from '@angular/common/http'; // HttpClient
-import { Product, ApiProduct } from '../types/Product';
+import { Product, CreateProductForm } from '../types/Product';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -22,8 +22,26 @@ export class ProductService {
   }
 
   getAdminProductList() {
-    return this.http.get<ApiProduct[]>(
+    return this.http.get<Product[]>(
       this.apiUrl,
+    );
+  }
+
+  createProduct(product: CreateProductForm) {
+    return this.http.post<Product>(
+      'http://localhost:3000/products/',
+      product
+    );
+  }
+
+  removeProduct(id: number) {
+    return this.http.delete<Product>('http://localhost:3000/products/' + id);
+  }
+
+  updateProduct(productId: number, product: CreateProductForm) {
+    return this.http.put<Product>(
+      'http://localhost:3000/products/' + productId,
+      product
     );
   }
 }

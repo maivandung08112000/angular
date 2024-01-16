@@ -20,6 +20,7 @@
         <th scope="col" class="px-6 py-3">STT</th>
         <th scope="col" class="px-6 py-3">title</th>
         <th scope="col" class="px-6 py-3">price</th>
+        <th scope="col" class="px-6 py-3">category</th>
         <th scope="col" class="px-6 py-3">description</th>
         <th scope="col" class="px-6 py-3">image</th>
       </tr>
@@ -37,20 +38,23 @@
         {{ product.title }}
         </th>
         <td class="px-6 py-4">${{ product.price }}</td>
+        <td class="px-6 py-4">{{ product.category }}</td>
         <td class="px-6 py-4">{{ product.description }}</td>
         <img class="px-6 py-4" src="{{product.image}}" alt="">
         <td class="px-6 py-4">
           <div class="flex gap-3">
             <button type="button">
               <a
+              [routerLink]="['/admin/product', product.id]"
               class="mb-4 bg-yellow-300 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-              >sua</a
+              >edit</a
             >
             </button>
             <button type="button">
               <a
+              (click)="deleteProduct(product.id)"
               class="mb-4 bg-black hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-              >xoa</a
+              >delete</a
             >
             </button>
           </div>

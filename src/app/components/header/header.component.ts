@@ -24,8 +24,8 @@ export class HeaderComponent {
       link: '/shop',
     },
     {
-      label: 'Contact',
-      link: '/',
+      label: 'admin',
+      link: '/admin/products',
     },
   ];
 }

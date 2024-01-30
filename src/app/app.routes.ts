@@ -11,21 +11,20 @@ import { LoginComponent } from './pages/login/login.component';
 
 import { AuthGuard } from '../../src/app/services/auth.guard';
 
-
-
-
 export const routes: Routes = [
 
-  { path: '',
+  {
+    path: '',
     component: DefautComponent,
     children: [
-      {path: 'login', component: LoginComponent},
       { path: '', component: HomeComponent },
       { path: 'product/:id', component: ProductDetailComponent },
-      { path: 'register', component: RegisterComponent },
-      { path: 'admin/products', redirectTo: '/login', pathMatch: 'full' },
+      // { path: 'admin/products', redirectTo: '/login', pathMatch: 'full' },
     ],
   },
+
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
 
   {
     path: 'admin',
@@ -37,5 +36,4 @@ export const routes: Routes = [
       { path: 'product/:id', component: EditProductComponent },
     ],
   },
-
 ];

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgFor } from '@angular/common';
 
+
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -25,7 +26,7 @@ export class HeaderComponent {
     },
     {
       label: 'admin',
-      link: '/admin/products',
+      link: '/admin',
     },
   ];
 }

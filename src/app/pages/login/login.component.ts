@@ -18,13 +18,35 @@ export class LoginComponent {
   authService = inject(AuthService);
   router = inject(Router);
 
-  login(): void {
-    if (!this.email || !this.password)
-      return alert('Please fill email and password');
-    this.authService.login(this.email, this.password).subscribe((res) => { console.log(res);
+  // login(): void {
+  //   if (!this.email || !this.password)
+  //     return alert('Please fill email and password');
+  //   this.authService.login(this.email, this.password).subscribe((res) => { console.log(res);
 
-      sessionStorage.setItem('token', JSON.stringify(res.accessToken));
+  //     sessionStorage.setItem('token', JSON.stringify(res.accessToken));
+  //       this.router.navigate(['/admin/products']);
+  //   });
+  // }
+
+
+  login(): void {
+    if (!this.email || !this.password) {
+      return alert('Please fill email and password');
+    }
+
+    this.authService.login(this.email, this.password).subscribe(
+      (res) => {
+        console.log(res);
+        this.authService.setToken(res.accessToken);
         this.router.navigate(['/admin/products']);
-    });
+      },
+      (error) => {
+        console.error('Login failed:', error);
+        // Handle login failure, show error message, etc.
+      }
+    )
   }
+
+
+
 }

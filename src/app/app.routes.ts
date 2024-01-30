@@ -6,10 +6,11 @@ import { DefautComponent } from './layouts/defaut/defaut.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { CreateProductComponent } from './pages/admin/create-product/create-product.component';
 import { EditProductComponent } from './pages/admin/edit-product/edit-product.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { LoginComponent } from './pages/login/login.component';
 
 export const routes: Routes = [
-  // route '/' = page Home
-  // path, component
+
   { path: '',
     component: DefautComponent,
     children: [
@@ -18,7 +19,6 @@ export const routes: Routes = [
     ],
   },
 
-  // { path: 'admin', component: ProductsComponent },
   {
     path: 'admin',
     component: AdminComponent,
@@ -27,5 +27,12 @@ export const routes: Routes = [
       { path: 'product/create', component: CreateProductComponent },
       { path: 'product/:id', component: EditProductComponent },
     ],
+  },
+
+  {path: 'login', component: LoginComponent},
+
+
+  {
+    path: 'register', component: RegisterComponent
   },
 ];

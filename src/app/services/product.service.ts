@@ -3,6 +3,14 @@ import { HttpClient } from '@angular/common/http'; // HttpClient
 import { Product, CreateProductForm } from '../types/Product';
 import { Observable } from 'rxjs';
 
+const options = {
+  headers: {
+    accept: 'application/json',
+    Authorization:
+      'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NjFlY2ZmYzExNjk1MWRhOTA5Yjk4MCIsImlhdCI6MTcwMzU3NjU5OCwiZXhwIjoxNzA2MTY4NTk4fQ.IEjPL_i_-LolpId4TRtcn55rrunliGy5EkM0XJbJdRg',
+  },
+};
+
 @Injectable({
   providedIn: 'root',
 })
@@ -21,17 +29,11 @@ export class ProductService {
     return this.http.get<Product>('http://localhost:3000/products/' + id);
   }
 
-  getAdminProductList() {
-    return this.http.get<Product[]>(
-      this.apiUrl,
-    );
-  }
+  getAdminProductList() {return this.http.get<Product[]>(this.apiUrl,options);}
+
 
   createProduct(product: CreateProductForm) {
-    return this.http.post<Product>(
-      'http://localhost:3000/products/',
-      product
-    );
+    return this.http.post<Product>('http://localhost:3000/products/',product);
   }
 
   removeProduct(id: number) {

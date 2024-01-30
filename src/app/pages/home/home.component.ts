@@ -4,6 +4,7 @@ import { NgFor } from '@angular/common';
 import { ProductService } from '../../services/product.service'; // import services
 import { Product } from '../../types/Product';
 import { AlbumComponent } from '../../components/album/album.component';
+
 @Component({
   selector: 'app-home',
   standalone: true,

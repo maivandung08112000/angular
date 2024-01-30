@@ -258,5 +258,27 @@
       "_id": "men's clothing",
       "title": "men's clothing"
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "maivandung08@gmail.com",
+      "password": "$2a$12$43/gpg1tJtFyw7lCbCCmuOFcTZOJ8vgqxqS/1PATJb3PVfP5ODemu"
+    },
+    {
+      "email": "maivandung0811@gmail.com",
+      "password": "$2a$10$wGxEE4o7DjFaedj/raARduvpgQQFp1pTOo4N4YD.u2PeK8xXet8sy",
+      "id": 2
+    },
+    {
+      "email": "maivandung@gmail.com",
+      "password": "$2a$10$SKU9TIcZfUCHLlCU9K.JP.QHI9NeZA8eil4ic9cnR90zy0iNP4QH6",
+      "id": 3
+    },
+    {
+      "email": "mai@gmail.com",
+      "password": "$2a$10$XQRsf3gOy1wWu97QJcmNoO7DSxp90vNlNH92HwuoCJFElEcWxXpOu",
+      "id": 4
+    }
   ]
 }

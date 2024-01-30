@@ -8,6 +8,7 @@ import { Category } from '../../../types/Category';
 import { NgFor } from '@angular/common';
 
 
+
 @Component({
   selector: 'app-create-product',
   standalone: true,
@@ -43,4 +44,7 @@ export class CreateProductComponent {
       .subscribe(() =>
       this.router.navigate(['/admin/products']));
   }
+
+
+
 }

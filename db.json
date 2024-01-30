@@ -267,23 +267,8 @@
     },
     {
       "email": "maivandung0811@gmail.com",
-      "password": "$2a$10$wGxEE4o7DjFaedj/raARduvpgQQFp1pTOo4N4YD.u2PeK8xXet8sy",
+      "password": "$2a$10$mVQuzrS4K1AlXmZnsFjwLOPQ9tqUf0A2eXX6mzeEM1I5tZ8hTOZMq",
       "id": 2
-    },
-    {
-      "email": "maivandung@gmail.com",
-      "password": "$2a$10$SKU9TIcZfUCHLlCU9K.JP.QHI9NeZA8eil4ic9cnR90zy0iNP4QH6",
-      "id": 3
-    },
-    {
-      "email": "mai@gmail.com",
-      "password": "$2a$10$XQRsf3gOy1wWu97QJcmNoO7DSxp90vNlNH92HwuoCJFElEcWxXpOu",
-      "id": 4
-    },
-    {
-      "email": "maivandung0@gmail.com",
-      "password": "$2a$10$y4OKpIXKrNqhszoYDqhPOO.VmP.6Ud/DC6Zcwawz7l7iFjLubBYR6",
-      "id": 5
     }
   ]
 }

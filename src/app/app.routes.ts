@@ -22,7 +22,7 @@ export const routes: Routes = [
       {path: 'login', component: LoginComponent},
       { path: '', component: HomeComponent },
       { path: 'product/:id', component: ProductDetailComponent },
-      {path: 'register', component: RegisterComponent},
+      { path: 'register', component: RegisterComponent },
       { path: 'admin/products', redirectTo: '/login', pathMatch: 'full' },
     ],
   },

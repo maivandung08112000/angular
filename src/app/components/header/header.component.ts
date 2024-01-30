@@ -26,7 +26,7 @@ export class HeaderComponent {
     },
     {
       label: 'admin',
-      link: '/admin',
+      link: '/admin/products',
     },
   ];
 }

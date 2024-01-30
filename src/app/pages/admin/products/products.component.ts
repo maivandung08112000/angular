@@ -4,11 +4,14 @@ import { RouterLink } from '@angular/router';
 import { Product } from '../../../types/Product';
 import { ProductService } from '../../../services/product.service';
 
+import { Category } from '../../../types/Category';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [NgFor, RouterLink],
+  imports: [NgFor, RouterLink, FormsModule],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css',
 })
@@ -33,5 +36,15 @@ export class ProductsComponent {
             ))
         );
     }
+  }
+
+
+
+  categories: Category[] = [];
+  searchTerm: string = '';
+  applySearchFilter(): void {
+    this.categories = this.categories.filter(product =>
+      product.title.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
   }
 }

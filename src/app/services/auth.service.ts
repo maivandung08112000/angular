@@ -18,27 +18,22 @@ export class AuthService {
 
 
   isAuthenticated(): boolean {
-    // Check if the user is authenticated based on the presence of a token in local storage
+    // Kiểm tra xem người dùng có được xác thực hay không dựa trên sự hiện diện của mã thông báo trong bộ nhớ cục bộ
     return !!localStorage.getItem('token');
   }
 
   setToken(token: string): void {
-    // Store the token in local storage upon successful login
+    // Lưu trữ mã thông báo trong bộ nhớ cục bộ khi đăng nhập thành công
     localStorage.setItem('token', token);
   }
 
   logout(): void {
-    // Remove the token from local storage upon logout
+    // Xóa mã thông báo khỏi bộ nhớ cục bộ khi đăng xuất
     localStorage.removeItem('token');
   }
-
-
 
   register(email: string, password: string): Observable<any> {
     const body = { email, password };
     return this.http.post(`http://localhost:3000/register`, body);
   }
-
-
-
 }

@@ -1,20 +1,13 @@
 <h1
   class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
 >
-  Product List
+  User List
 </h1>
-
-<div>
-  <label for="search" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">tim kiem:</label>
-  <input [(ngModel)]="searchTerm" type="text" id="search" name="search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type product title to search">
-</div>
-
-
 <button
-  routerLink="/admin/categorys/create"
+  routerLink="/admin/user/create"
   class="mb-4 bg-yellow-300 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
 >
-  Create New categories
+  Create New User
 </button>
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
   <table
@@ -25,37 +18,35 @@
     >
       <tr>
         <th scope="col" class="px-6 py-3">STT</th>
-        <th scope="col" class="px-6 py-3">title</th>
-        <th scope="col" class="px-6 py-3">category</th>
-        <th scope="col" class="px-6 py-3">description</th>
+        <th scope="col" class="px-6 py-3">email</th>
+        <th scope="col" class="px-6 py-3">pass</th>
       </tr>
     </thead>
     <tbody>
       <tr
         class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700"
-        *ngFor="let product of products; let i = index"
+        *ngFor="let user of user; let i = index"
       >
       <td class="px-6 py-4">{{i+1}}</td>
         <th
           scope="row"
           class="px-6 py-4 "
         >
-        {{ product.title }}
+        {{ user.email }}
         </th>
-        <td class="px-6 py-4">{{ product.category }}</td>
-        <td class="px-6 py-4">{{ product.description }}</td>
+        <td class="px-6 py-4">${{ user.password }}</td>
         <td class="px-6 py-4">
           <div class="flex gap-3">
             <button type="button">
               <a
-              [routerLink]="['/admin/categorysEdit', product.id]"
+              [routerLink]="['/admin/userEdit', user.id]"
               class="mb-4 bg-yellow-300 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               >edit</a
             >
             </button>
             <button type="button">
               <a
-              (click)="deleteProduct(product.id)"
+              (click)="deleteProduct(user.id)"
               class="mb-4 bg-black hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               >delete</a
             >

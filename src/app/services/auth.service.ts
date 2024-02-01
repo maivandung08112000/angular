@@ -1,6 +1,8 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { User } from '../types/User';
+import { EditUserForm } from '../types/User';
 
 @Injectable({
   providedIn: 'root',
@@ -36,4 +38,23 @@ export class AuthService {
     const body = { email, password };
     return this.http.post(`http://localhost:3000/register`, body);
   }
+
+  getAllUserList() {return this.http.get<User[]>('http://localhost:3000/users');}
+
+  removeUser(id: number) {
+    return this.http.delete<User>('http://localhost:3000/users/' + id);
+  }
+
+  updateUser(userId: string, user: EditUserForm) {
+    return this.http.put<User>(
+      'http://localhost:3000/users/' + userId,
+      user
+    );
+  }
+
+  getUserDetail(userId: string): Observable<any> {
+    const url = `http://localhost:3000/users/${userId}`;
+    return this.http.get(url);
+  }
 }
+

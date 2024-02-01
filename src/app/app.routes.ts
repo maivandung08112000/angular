@@ -14,6 +14,10 @@ import { CategorysComponent } from './pages/admin/category/categorys/categorys.c
 import { CreateCategoryComponent } from './pages/admin/category/create-category/create-category.component';
 import { EditCategorysComponent } from './pages/admin/category/edit-categorys/edit-categorys.component';
 
+import { UseComponent } from './pages/admin/user/use/use.component';
+import { CreateUseComponent } from './pages/admin/user/create-use/create-use.component';
+import { EditUseComponent } from './pages/admin/user/edit-use/edit-use.component';
+
 export const routes: Routes = [
 
   {
@@ -48,7 +52,21 @@ export const routes: Routes = [
     children: [
       { path: 'categorys', component: CategorysComponent },
       { path: 'categorys/create', component: CreateCategoryComponent },
-      { path: 'categorys/:id', component: EditCategorysComponent },
+      { path: 'categorysEdit/:id', component: EditCategorysComponent },
     ],
   },
+
+
+  {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [AuthGuard],
+    children: [
+      { path: 'user', component: UseComponent },
+      { path: 'user/create', component: CreateUseComponent },
+      { path: 'userEdit/:id', component: EditUseComponent },
+    ],
+  },
+
+  
 ];

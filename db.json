@@ -25,18 +25,6 @@
       }
     },
     {
-      "id": 3,
-      "title": "Mens Cotton Jacket",
-      "price": 55.99,
-      "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
-      "category": "men's clothing",
-      "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
-      "rating": {
-        "rate": 4.7,
-        "count": 500
-      }
-    },
-    {
       "id": 4,
       "title": "Mens Casual Slim Fit",
       "price": 15.99,
@@ -262,18 +250,8 @@
   "users": [
     {
       "id": 1,
-      "email": "maivandung08@gmail.com",
-      "password": "$2a$12$43/gpg1tJtFyw7lCbCCmuOFcTZOJ8vgqxqS/1PATJb3PVfP5ODemu"
-    },
-    {
-      "email": "maivandung0811@gmail.com",
-      "password": "$2a$10$mVQuzrS4K1AlXmZnsFjwLOPQ9tqUf0A2eXX6mzeEM1I5tZ8hTOZMq",
-      "id": 2
-    },
-    {
-      "email": "a@gmail.com",
-      "password": "$2a$10$OaRcwQR1OUmNfYbem77Xf.30qbV1XtA9URdoL1JouoYZtbngdryCi",
-      "id": 3
+      "email": "maivandung33@gmail.com",
+      "password": "$2a$10$RNwrQ1gZPK8tkINYIJ5uw.dMWe8d49Lfv5qb7t5Gr/fQdz/fOJD7O"
     }
   ]
 }

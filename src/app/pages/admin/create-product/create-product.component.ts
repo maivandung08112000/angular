@@ -45,6 +45,4 @@ export class CreateProductComponent {
       this.router.navigate(['/admin/products']));
   }
 
-
-
 }

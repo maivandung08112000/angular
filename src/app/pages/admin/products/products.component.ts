@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 export class ProductsComponent {
   products: Product[] = [];
   productService = inject(ProductService);
+  
 
   ngOnInit(): void {
     this.productService

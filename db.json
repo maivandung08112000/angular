@@ -252,6 +252,11 @@
       "id": 1,
       "email": "maivandung33@gmail.com",
       "password": "$2a$10$RNwrQ1gZPK8tkINYIJ5uw.dMWe8d49Lfv5qb7t5Gr/fQdz/fOJD7O"
+    },
+    {
+      "email": "maivandung08@gmail.com",
+      "password": "$2a$10$G1oFXLH1P7wciYNz.CV2RuqZXgF3aT6T5IqUmbcu61lHZCBaIJR/W",
+      "id": 2
     }
   ]
 }

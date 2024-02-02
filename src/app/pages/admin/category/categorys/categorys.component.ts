@@ -4,13 +4,14 @@ import { RouterLink } from '@angular/router';
 import { Product } from '../../../../types/Product';
 import { ProductService } from '../../../../services/product.service';
 
-import { Category } from '../../../../types/Category';
 import { FormsModule } from '@angular/forms';
+
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
   selector: 'app-categorys',
   standalone: true,
-  imports: [NgFor, RouterLink, FormsModule],
+  imports: [NgFor, RouterLink, FormsModule, NgxPaginationModule],
   templateUrl: './categorys.component.html',
   styleUrl: './categorys.component.css'
 })
@@ -24,6 +25,15 @@ export class CategorysComponent {
     this.productService
     .getAdminProductList()
       .subscribe((products) => (this.products = products));
+      this.loadProducts();
+  }
+
+  currentPage: number = 1;
+  itemsPerPage: number = 5;
+  loadProducts(): void {
+    this.productService.getAdminProductList().subscribe((products) => {
+      this.products = products;
+    });
   }
 
   deleteProduct(id: number): void {

@@ -4,27 +4,41 @@ import { RouterLink } from '@angular/router';
 import { Product } from '../../../types/Product';
 import { ProductService } from '../../../services/product.service';
 
-import { Category } from '../../../types/Category';
+
 import { FormsModule } from '@angular/forms';
 
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [NgFor, RouterLink, FormsModule],
+  imports: [NgFor, RouterLink, FormsModule, NgxPaginationModule],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css',
 })
 export class ProductsComponent {
   products: Product[] = [];
   productService = inject(ProductService);
-  
+  searchTerm: string = '';
+  selectedCategory: string = '';
+
 
   ngOnInit(): void {
     this.productService
     .getAdminProductList()
       .subscribe((products) => (this.products = products));
+      this.loadProducts();
   }
+
+
+  currentPage: number = 1;
+  itemsPerPage: number = 5; 
+  loadProducts(): void {
+    this.productService.getAdminProductList().subscribe((products) => {
+      this.products = products;
+    });
+  }
+
 
   deleteProduct(id: number): void {
     if (window.confirm('Do you really remove product?')) {
@@ -41,11 +55,22 @@ export class ProductsComponent {
 
 
 
-  categories: Category[] = [];
-  searchTerm: string = '';
-  applySearchFilter(): void {
-    this.categories = this.categories.filter(product =>
-      product.title.toLowerCase().includes(this.searchTerm.toLowerCase())
-    );
+
+  search(): void {
+    this.productService
+      .getAdminProductList()
+      .subscribe((products) => (this.products = products.filter(product => product.title.toLowerCase().includes(this.searchTerm.toLowerCase()))));
+
+
+
+      this.productService
+      .getAdminProductList()
+      .subscribe((products) => {
+        this.products = products.filter((product) =>
+          product.title.toLowerCase().includes(this.searchTerm.toLowerCase()) &&
+          (this.selectedCategory === '' || product.category === this.selectedCategory)
+        );
+      });
   }
+
 }

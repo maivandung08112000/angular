@@ -5,11 +5,22 @@
 </h1>
 
 <div>
-  <label for="search" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">tim kiem:</label>
-  <input [(ngModel)]="searchTerm" type="text" id="search" name="search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type product title to search">
+  <input [(ngModel)]="searchTerm" placeholder="Search by product title" />
+  <button (click)="search()"  class="mb-4 bg-yellow-300 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Search</button>
 </div>
 
+<select [(ngModel)]="selectedCategory" (change)="search()">
+  <option value="">All Categories</option>
+  <!-- Add options for each category, you may need to modify this based on your data -->
+  <option value="men's clothing">men's clothing</option>
+  <option value="jewelery">jewelery</option>
+  <option value="electronics">electronics</option>
+  <option value="women's clothing">women's clothing</option>
+  <!-- Add more options as needed -->
+</select>
 
+<br>
+<br>
 <button
   routerLink="/admin/categorys/create"
   class="mb-4 bg-yellow-300 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"

@@ -17,6 +17,8 @@ import { FormsModule } from '@angular/forms';
 export class CategorysComponent {
   products: Product[] = [];
   productService = inject(ProductService);
+  searchTerm: string = '';
+  selectedCategory: string = '';
 
   ngOnInit(): void {
     this.productService
@@ -38,12 +40,20 @@ export class CategorysComponent {
   }
 
 
+  search(): void {
+    this.productService
+      .getAdminProductList()
+      .subscribe((products) => (this.products = products.filter(product => product.title.toLowerCase().includes(this.searchTerm.toLowerCase()))));
 
-  categories: Category[] = [];
-  searchTerm: string = '';
-  applySearchFilter(): void {
-    this.categories = this.categories.filter(product =>
-      product.title.toLowerCase().includes(this.searchTerm.toLowerCase())
-    );
+
+      this.productService
+      .getAdminProductList()
+      .subscribe((products) => {
+        this.products = products.filter((product) =>
+          product.title.toLowerCase().includes(this.searchTerm.toLowerCase()) &&
+          (this.selectedCategory === '' || product.category === this.selectedCategory)
+        );
+      });
   }
+
 }
